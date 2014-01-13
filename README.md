@@ -12,8 +12,7 @@ save/restore the actual bootstrap + partition table, etc.
 Payloads will be loaded and executed at 0000:0800, and overwritten
 code is at 0000:0600. To execute original bootstrap, just copy 0x200
 bytes from 0000:0600 to 0000:7c00, or load the sector with the original
-backuped bootstrap at 0000:7c000. To find it, parse the code at sector
-1.
+backuped bootstrap at 0000:7c000. To find it, parse the code at sector 1.
 
 While writing anything on a device, a dump is performed, and I strongly
 advise you to keep this dump on a separate device, just in case you
@@ -25,9 +24,13 @@ Examples:
 Dump 4 sectors : MLB.exe -p 1 -l 0 4
 
 Display "pwn.txt" ascii art message at boot : MLB.exe -p 1 -aaW ".\pwn.txt"
+
 Run "print_boot2" code at boot : MLB.exe -p 0 -irW "print_boot2"
+
 Run "keypwn" code on PhysicalDrive1 : MLB.exe -p 1 -irW "keypwn"
+
 Wipe 30 sectors (starting at sector #2) of PhysicalDrive1 : MLB.exe -p 1 -wipe 30
+
 Backup MBR + part. table of PhysicalDrive0 into "backup.bin" : MLB.exe -p 0 -b1 backup.bin
 
 
