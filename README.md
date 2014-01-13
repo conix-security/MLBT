@@ -13,7 +13,7 @@ Payloads will be loaded and executed at 0000:0800, and overwritten
 code is at 0000:0600. To execute original bootstrap, just copy 0x200
 bytes from 0000:0600 to 0000:7c00, or load the sector with the original
 backuped bootstrap at 0000:7c000. To find it, parse the code at sector
-#1.
+1.
 
 While writing anything on a device, a dump is performed, and I strongly
 advise you to keep this dump on a separate device, just in case you
